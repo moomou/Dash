@@ -1,0 +1,57 @@
+@import "mixins";
+
+body {
+    font-color: black;
+}
+
+#main-container {
+  #viz-container {
+    position: absolute;
+    margin: 100px 0 0 50px;
+    ul {
+      list-style: none;
+      li {
+        margin: 10px;
+        float: left;
+      }
+      li span {
+        margin-left: 30px;
+        font-size: 30px;
+      }
+      .fa {
+        cursor: pointer;
+        background: white;
+        padding: 7px;
+        border-radius: 25%;
+      }
+    }
+  }
+  display: block;
+  margin: 0 auto; 
+  position: relative;
+
+  svg {
+    display: block;
+    margin: 50px auto;
+  }
+  .card {
+    .actions {
+      list-style: none;
+      float: right;
+      margin: -40px 20px 0 0;
+      li {
+        cursor: pointer;
+        float: left;
+        margin: 5px;
+      }
+    }
+    h2 {
+      margin-left: 25px;
+      color: white;
+    }
+    float: right;
+    margin: 50px;
+    width: 500px;
+    height: 300px;
+  }
+}

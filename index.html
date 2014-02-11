@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="bower_components/todomvc-common/base.css">
+    <link href='css/compiled.css' rel='stylesheet' type='text/css'>
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <title>Dash</title>
+  </head>
+  <body>
+    <div id="main-container">
+      <div id="viz-container">
+        <ul>
+          <li><i class="js-viz-backward fa fa-lg fa-backward"></i></li>
+          <li><span id="viz-week"></span><li>
+          <li><i class="js-viz-forward fa fa-lg fa-forward"></i></li>
+        </ul>
+        <div id="svg-container"></div>
+      </div>
+      <div class="card">
+          <h2 id="datetime">Todo</h2>
+          <ul class="actions">
+            <li><i class="js-viz fa fa-lg fa-inverse fa-circle-o"></i></li>
+            <li><i class="js-save fa fa-lg fa-inverse fa-cloud-upload"></i></li>
+          </ul>
+          <section id="todoapp">
+            <header id="header">
+              <input id="new-todo" placeholder="What needs to be done?" autofocus>
+            </header>
+          <section id="main">
+            <input id="toggle-all" type="checkbox">
+            <label for="toggle-all">Mark all as complete</label>
+            <ul id="todo-list"></ul>
+          </section>
+          <footer id="footer"></footer>
+        </section>
+      </div>
+    </div>
+    <script type="text/template" id="item-template">
+        <div class="view">
+          <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+          <label><%- title %></label>
+          <button class="destroy"></button>
+        </div>
+        <input class="edit" value="<%- title %>">
+      </script>
+      <script type="text/template" id="stats-template">
+        <span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
+        <ul id="filters">
+          <li>
+            <a class="selected" href="#/">All</a>
+          </li>
+          <li>
+            <a href="#/active">Active</a>
+          </li>
+          <li>
+            <a href="#/completed">Completed</a>
+          </li>
+        </ul>
+			<% if (completed) { %>
+			<button id="clear-completed">Clear completed (<%= completed %>)</button>
+			<% } %>
+    </script>
+    <script src="bower_components/todomvc-common/base.js"></script>
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+    <script src="bower_components/d3/d3.min.js"></script>
+    <script src="bower_components/moment/min/moment.min.js"></script>
+    <script src="bower_components/draggabilly/draggabilly.pkgd.min.js"></script>
+    <script src="js/models/todo.js"></script>
+    <script src="js/collections/todos.js"></script>
+    <script src="js/views/todo-view.js"></script>
+    <script src="js/views/app-view.js"></script>
+    <script src="js/routers/router.js"></script>
+    <script src="js/todoapp.js"></script>
+    <script src="coffee/viz.js"></script>
+    <script src="coffee/app.js"></script>
+  </body>
+</html>

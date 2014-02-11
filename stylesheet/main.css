@@ -1,0 +1,42 @@
+body {
+  font-color: black; }
+
+#main-container {
+  display: block;
+  margin: 0 auto;
+  position: relative; }
+  #main-container #viz-container {
+    position: absolute;
+    margin: 100px 0 0 50px; }
+    #main-container #viz-container ul {
+      list-style: none; }
+      #main-container #viz-container ul li {
+        margin: 10px;
+        float: left; }
+      #main-container #viz-container ul li span {
+        margin-left: 30px;
+        font-size: 30px; }
+      #main-container #viz-container ul .fa {
+        cursor: pointer;
+        background: white;
+        padding: 7px;
+        border-radius: 25%; }
+  #main-container svg {
+    display: block;
+    margin: 50px auto; }
+  #main-container .card {
+    float: right;
+    margin: 50px;
+    width: 500px;
+    height: 300px; }
+    #main-container .card .actions {
+      list-style: none;
+      float: right;
+      margin: -40px 20px 0 0; }
+      #main-container .card .actions li {
+        cursor: pointer;
+        float: left;
+        margin: 5px; }
+    #main-container .card h2 {
+      margin-left: 25px;
+      color: white; }
