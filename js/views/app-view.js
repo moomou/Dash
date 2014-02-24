@@ -76,6 +76,7 @@ var app = app || {};
 		// Add a single todo item to the list by creating a view for it, and
 		// appending its element to the `<ul>`.
 		addOne: function (todo) {
+            console.log(todo.get('title'));
 			var view = new app.TodoView({ model: todo });
 			this.$list.append(view.render().el);
 		},
@@ -96,9 +97,10 @@ var app = app || {};
 
 		// Generate the attributes for a new Todo item.
 		newAttributes: function () {
+            var title = this.$input.val().trim();
 			return {
-				title: this.$input.val().trim(),
-				order: app.todos.nextOrder(),
+				title: title,
+				order: app.todos.nextOrder(title),
 				completed: false
 			};
 		},

@@ -34,7 +34,6 @@ var app = app || {};
                 hour += 12;
             }
 
-            debugger;
             effort = curHour - hour + (curMin - min) / 60;
 
 			this.save({
