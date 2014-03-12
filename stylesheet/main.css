@@ -7,7 +7,7 @@ body {
   position: relative; }
   #main-container #viz-container {
     position: absolute;
-    margin: 50px 0 0 50px; }
+    margin: 25px 0 0 50px; }
     #main-container #viz-container ul {
       list-style: none; }
       #main-container #viz-container ul li {
@@ -26,8 +26,8 @@ body {
     margin: 50px auto; }
   #main-container .card {
     float: right;
-    margin: 50px;
-    width: 500px;
+    margin: 15px 25px;
+    width: 460px;
     height: 300px; }
     #main-container .card .actions {
       list-style: none;

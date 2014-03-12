@@ -4,11 +4,11 @@
 
 
 
-  height = 640;
+  height = 550;
 
-  width = 1200;
+  width = 750;
 
-  margin = 10;
+  margin = 7;
 
   yTitles = "日, 一,二,三,四,五,六".split(",");
 

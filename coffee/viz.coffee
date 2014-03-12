@@ -1,7 +1,7 @@
 #first load data and clean it
-height = 640
-width = 1200
-margin = 10
+height = 550
+width = 750
+margin = 7
 
 yTitles = "日, 一,二,三,四,五,六".split ","
 xTitles = [

@@ -4,7 +4,6 @@ API_Backend = null
 $('#datetime').html(moment().format("ddd, MMM Do YYYY"))
 
 CURRENT_OFFSET = 0
-
 getLatency = () ->
     server =
         imgUrl: "http://google.com"
