@@ -1,9 +1,11 @@
 API_Backend = null
 
-# Update the current date
-$('#datetime').html(moment().format("ddd, MMM Do YYYY"))
-
+WEEK_NUM = moment().format 'YYYYww'
 CURRENT_OFFSET = 0
+
+###
+# A simple function to calculate network latency
+###
 getLatency = () ->
     server =
         imgUrl: "http://google.com"
@@ -45,20 +47,40 @@ saveDayProgress = () ->
 
     window.localStorage.setItem filename, JSON.stringify output
 
+###
+# Update checkboxes
+###
+checkboxUpdate = (weekKey) ->
+    localforage.getItem(weekKey).then (value) ->
+        if not value
+            $('.ck').prop('checked', false)
+        cks = $('.ck')
+        for ck, ind in cks
+            if value[ind]
+                ck.checked = true
+            else
+                ck.checked = false
+
+###
+# Generate the visualization
+###
 visualize = (offset) ->
     weekOffset = moment().day(offset)
+    weekKey    = weekOffset.format "YYYYww"
+    weekData   = []
 
     $('#viz-week').html weekOffset.format "YYYY-ww"
-
-    weekKey = weekOffset.format "YYYYww"
-    weekData = []
 
     for num in [0..6]
         dayData = window.localStorage.getItem(weekKey+num)
         weekData[num] = JSON.parse dayData
 
-    window.PlotPunchCard(null, weekData)
+    # Update viz
+    debugger
+    checkboxUpdate weekKey
+    window.PlotPunchCard null, weekData
 
+# Event Handler
 $('.js-save').click saveDayProgress
 
 $('.js-viz-backward').click (e) ->
@@ -69,6 +91,21 @@ $('.js-viz-forward').click (e) ->
     CURRENT_OFFSET += 7
     visualize(CURRENT_OFFSET)
 
+$('.ck').change (e) ->
+    index = $(e.target).parent().index()
+    localforage.getItem(WEEK_NUM).then (value) ->
+        if not value
+            checked = {}
+            checked[index] = $(e.target).prop('checked')
+            localforage.setItem(WEEK_NUM, checked)
+        else
+            value[index] = $(e.target).prop('checked')
+            localforage.setItem(WEEK_NUM, value)
+
+# Kick off the page
 new Draggabilly document.getElementById('todoapp')
 
 visualize CURRENT_OFFSET
+
+# Update the current date
+$('#datetime').html(moment().format("ddd, MMM Do YYYY"))

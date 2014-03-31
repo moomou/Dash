@@ -1,19 +1,18 @@
 #first load data and clean it
-height = 550
-width = 750
-margin = 7
+height = 400
+width = 550
+margin = 6
 
 yTitles = "日, 一,二,三,四,五,六".split ","
 xTitles = [
     "learning"
-    "language"
     "algorithm"
     "ai"
     "startup"
     "reading"
-    "fun"
     "thinking"
-    "hack"]
+    "hack"
+]
 
 plotPunchCard = (weekData) ->
     $('#svg-container').empty()

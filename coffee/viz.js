@@ -4,15 +4,15 @@
 
 
 
-  height = 550;
+  height = 400;
 
-  width = 750;
+  width = 550;
 
-  margin = 7;
+  margin = 6;
 
   yTitles = "日, 一,二,三,四,五,六".split(",");
 
-  xTitles = ["learning", "language", "algorithm", "ai", "startup", "reading", "fun", "thinking", "hack"];
+  xTitles = ["learning", "algorithm", "ai", "startup", "reading", "thinking", "hack"];
 
   plotPunchCard = function(weekData) {
     var canvas, day, pt, spaceX, task, x, xScale, y, yScale, _i, _j, _k, _len, _ref, _ref1, _results, _results1, _results2;

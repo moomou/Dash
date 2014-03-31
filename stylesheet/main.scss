@@ -2,6 +2,9 @@
 
 body {
   font-color: black;
+  ul {
+    list-style: none;
+  }
 }
 
 #main-container {
@@ -26,15 +29,37 @@ body {
       }
     }
   }
+  #checklist {
+    clear: both;
+  }
+  #checklist, #project, #mediumGoal {
+    float: left;
+    margin-top: 220px;
+    margin-left: 50px;
+    h3 {
+      text-align: center;
+    }
+    input {
+      margin-right: 10px;
+    }
+    span {
+      margin: 15px;
+      display: block;
+      clear: both;
+    }
+  }
   display: block;
-  margin: 0 auto; 
+  margin: 0 auto;
   position: relative;
-
   svg {
     display: block;
     margin: 50px auto;
   }
   .card {
+    width: 420px;
+    height: 270px;
+    float: right;
+    margin: 15px 25px;
     .actions {
       list-style: none;
       float: right;
@@ -49,9 +74,5 @@ body {
       margin-left: 25px;
       color: white;
     }
-    float: right;
-    margin: 15px 25px;
-    width: 460px;
-    height: 300px;
   }
 }

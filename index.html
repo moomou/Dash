@@ -11,7 +11,6 @@
   </head>
   <body>
     <div id="main-container">
-      <h2 style="text-align: center; margin-bottom: 0;">Vimusical, EmotionEngine, Cloverite, Starfly</h2>
       <div id="viz-container">
         <ul>
           <li><i class="js-viz-backward fa fa-lg fa-backward"></i></li>
@@ -21,15 +20,15 @@
         <div id="svg-container"></div>
       </div>
       <div class="card">
-          <h2 id="datetime"></h2>
-          <ul class="actions">
-            <li><i class="js-viz fa fa-lg fa-inverse fa-circle-o"></i></li>
-            <li><i class="js-save fa fa-lg fa-inverse fa-cloud-upload"></i></li>
-          </ul>
-          <section id="todoapp">
-            <header id="header">
-              <input id="new-todo" placeholder="What needs to be done?" autofocus>
-            </header>
+        <h2 id="datetime"></h2>
+        <ul class="actions">
+          <li><i class="js-viz fa fa-lg fa-inverse fa-circle-o"></i></li>
+          <li><i class="js-save fa fa-lg fa-inverse fa-cloud-upload"></i></li>
+        </ul>
+        <section id="todoapp">
+          <header id="header">
+            <input id="new-todo" placeholder="What needs to be done?" autofocus>
+          </header>
           <section id="main">
             <input id="toggle-all" type="checkbox">
             <label for="toggle-all">Mark all as complete</label>
@@ -38,6 +37,26 @@
           <footer id="footer"></footer>
         </section>
       </div>
+      <section id="checklist">
+        <h3>Weekly Goal</h3>
+        <ul>
+          <li><input class='ck' type="checkbox" id="item1"><label for="item1">Write 1 Blog Post</label></li>
+          <li><input class='ck' type="checkbox" id="item2"><label for="item2">Code 1 DS</label></li>
+          <li><input class='ck' type="checkbox" id="item3"><label for="item3">Read 1 Paper </label></li>
+          <li><input class='ck' type="checkbox" id="item4"><label for="item4">Read 1 Open Source</label></li>
+          <li><input class='ck' type="checkbox" id="item5"><label for="item5">Lesson: Information Theory</label></li>
+        </ul>
+      </section>
+      <section id="project">
+        <h3>Project</h3>
+        <span>Finish - Cloverite, Starfly, Vimusical, EmotionEngine</span>
+        <span>Use - Docker, React, Grunt</span>
+        <span>Learn - Information Theory, Game Theory</span>
+      </section>
+      <section id="mediumGoal">
+        <h3>Soonish...</h3>
+        <span>Algorithm Design 2nd Edition</span>
+      </section>
     </div>
     <script type="text/template" id="item-template">
         <div class="view">
@@ -72,6 +91,7 @@
     <script src="bower_components/d3/d3.min.js"></script>
     <script src="bower_components/moment/min/moment.min.js"></script>
     <script src="bower_components/draggabilly/draggabilly.pkgd.min.js"></script>
+    <script src="bower_components/localforage/dist/localforage.min.js"></script>
     <script src="js/models/todo.js"></script>
     <script src="js/collections/todos.js"></script>
     <script src="js/views/todo-view.js"></script>

@@ -3,8 +3,7 @@ SASSC = sass
 HANDLEBARSC = handlebars
 
 # Build app package
-APPSRC = coffee/file.coffee \
-	coffee/viz.coffee \
+APPSRC = coffee/viz.coffee \
 	coffee/app.coffee
 
 APPOBJ = ${APPSRC:.coffee=.js}
