@@ -74,7 +74,7 @@ plotPunchCard = (weekData) ->
                 .on('mouseover', () ->
                     circle = d3.select this
                     circle.attr('r', (d) -> Math.abs(d) * 15)
-                    circle.append('title').text((d) -> d + ' hour').show()
+                    circle.append('title').text((d) -> d + ' hour')
                 )
                 .on('mouseout', () ->
                     circle = d3.select this

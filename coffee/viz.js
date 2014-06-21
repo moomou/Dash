@@ -67,7 +67,7 @@
             });
             return circle.append('title').text(function(d) {
               return d + ' hour';
-            }).show();
+            });
           }).on('mouseout', function() {
             var circle;
             circle = d3.select(this);
