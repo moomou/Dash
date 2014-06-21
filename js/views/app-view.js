@@ -100,7 +100,7 @@ var app = app || {};
             var title = this.$input.val().trim();
 			return {
 				title: title,
-				order: app.todos.nextOrder(title),
+				order: app.todos.nextOrder(),
 				completed: false
 			};
 		},

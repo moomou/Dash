@@ -12,7 +12,7 @@
 
   yTitles = "日, 一,二,三,四,五,六".split(",");
 
-  xTitles = ["learning", "algorithm", "ai", "startup", "reading", "thinking", "hack"];
+  xTitles = ["learning", "algorithm", "startup", "reading", "hack"];
 
   plotPunchCard = function(weekData) {
     var canvas, day, pt, spaceX, task, x, xScale, y, yScale, _i, _j, _k, _len, _ref, _ref1, _results, _results1, _results2;
@@ -52,10 +52,29 @@
           pt = day[task];
           console.log(task);
           x = xTitles.indexOf(task);
-          _results3.push(canvas.append('g').attr("transform", "translate(" + (2.5 * margin) + ", 0)").selectAll('circle').data([pt]).enter().append('circle').style("fill", '#' + Math.floor(Math.random() * 16777215).toString(16)).attr('r', function(d) {
+          _results3.push(canvas.append('g').attr("transform", "translate(" + (2.5 * margin) + ", 0)").selectAll('circle').data([pt]).enter().append('circle').style("fill", randomColor({
+            hue: 'monochrome',
+            count: 1
+          })[0]).attr('r', function(d) {
             return Math.abs(d) * 6;
           }).attr('transform', function() {
-            return "translate(                    " + (x * (spaceX + margin) + 5 * margin) + ",                    " + (5 * margin + 25 * margin * yScale(y)) + ")";
+            return "translate(" + (x * (spaceX + margin) + 5 * margin) + ", " + (5 * margin + 25 * margin * yScale(y)) + ")";
+          }).on('mouseover', function() {
+            var circle;
+            circle = d3.select(this);
+            circle.attr('r', function(d) {
+              return Math.abs(d) * 15;
+            });
+            return circle.append('title').text(function(d) {
+              return d + ' hour';
+            }).show();
+          }).on('mouseout', function() {
+            var circle;
+            circle = d3.select(this);
+            circle.attr('r', function(d) {
+              return Math.abs(d) * 6;
+            });
+            return circle.select('title').remove();
           }));
         }
         return _results3;

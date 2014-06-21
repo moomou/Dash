@@ -7,10 +7,8 @@ yTitles = "日, 一,二,三,四,五,六".split ","
 xTitles = [
     "learning"
     "algorithm"
-    "ai"
     "startup"
     "reading"
-    "thinking"
     "hack"
 ]
 
@@ -69,12 +67,20 @@ plotPunchCard = (weekData) ->
                 .data([pt])
                 .enter()
                 .append('circle')
-                .style("fill", '#'+Math.floor(Math.random()*16777215).toString(16))
+                .style("fill", randomColor({hue: 'monochrome', count: 1})[0])
                 .attr('r', (d) -> Math.abs(d)*6)
                 .attr('transform', () ->
-                    "translate(
-                    #{x * (spaceX + margin) + 5*margin},
-                    #{5*margin + 25 * margin * yScale(y)})")
+                    "translate(#{x * (spaceX + margin) + 5*margin}, #{5*margin + 25 * margin * yScale(y)})")
+                .on('mouseover', () ->
+                    circle = d3.select this
+                    circle.attr('r', (d) -> Math.abs(d) * 15)
+                    circle.append('title').text((d) -> d + ' hour').show()
+                )
+                .on('mouseout', () ->
+                    circle = d3.select this
+                    circle.attr('r', (d) -> Math.abs(d) * 6)
+                    circle.select('title').remove()
+                )
 
 window.PlotPunchCard = (goalData, progressData) ->
     console.log progressData

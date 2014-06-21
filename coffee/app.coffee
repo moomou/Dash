@@ -76,7 +76,6 @@ visualize = (offset) ->
         weekData[num] = JSON.parse dayData
 
     # Update viz
-    debugger
     checkboxUpdate weekKey
     window.PlotPunchCard null, weekData
 

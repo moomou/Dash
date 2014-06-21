@@ -29,25 +29,26 @@ var app = app || {};
 		},
 
 		nextOrder: function (title) {
-            var offset = null;
-
 			if (!this.length) {
 				return 1;
 			}
 
-            if (title.indexOf("!") == 0) {
+            return this.length + 1;
+		},
+
+		comparator: function (todo) {
+            var title = todo.get('title'),
                 offset = 0;
-            } else if (title.indexOf("?") == 0) {
+
+            if (title.indexOf("!") === 0) {
+                offset = 0;
+            } else if (title.indexOf("?") === 0) {
                 offset = 100;
             } else {
                 offset = 1000;
             }
 
-			return _.uniqueId() + offset;
-		},
-
-		comparator: function (todo) {
-			return parseInt(todo.get('order'));
+            return todo.get('order') + offset;
 		}
 	});
 

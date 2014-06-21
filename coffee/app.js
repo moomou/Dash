@@ -106,7 +106,6 @@
       dayData = window.localStorage.getItem(weekKey + num);
       weekData[num] = JSON.parse(dayData);
     }
-    debugger;
     checkboxUpdate(weekKey);
     return window.PlotPunchCard(null, weekData);
   };
