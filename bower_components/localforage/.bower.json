@@ -1,0 +1,31 @@
+{
+  "name": "localforage",
+  "version": "0.2.1",
+  "main": [
+    "dist/localforage.min.js"
+  ],
+  "ignore": [
+    ".travis.yml",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "test*",
+    "vendor/*"
+  ],
+  "dependencies": {
+    "es6-promise": "~0.1.1"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.10"
+  },
+  "homepage": "https://github.com/mozilla/localForage",
+  "_release": "0.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.2.1",
+    "commit": "f51239deab0e325e13b693ec7562925655eab13a"
+  },
+  "_source": "git://github.com/mozilla/localForage.git",
+  "_target": "~0.2.1",
+  "_originalSource": "localforage",
+  "_direct": true
+}
